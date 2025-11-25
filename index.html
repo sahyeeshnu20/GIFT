@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Book</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="confetti" id="confetti-layer-1"></div>
+    <div class="confetti" id="confetti-layer-2"></div>
+
+    <div class="book-container">
+        <div class="book">
+
+            <div class="page" id="page1">
+                <h1>Happy Birthday KAYAL !!!!</h1>
+                <p>Wishing you a day full of love and joy!</p>
+                <button class="next-btn" onclick="nextPage(2)">Next</button>
+            </div>
+
+            <div class="page" id="page2" style="display:none;">
+                <h1>Unlock Your Birthday Gift!</h1>
+                <div id="question-container">
+                    <p id="question-text"></p>
+                    <form id="code-form">
+                        <input type="text" id="code-input" placeholder="Enter the answer" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <div id="message"></div> 
+                <button class="next-btn" style="display:none;" id="next-btn">Next</button> 
+            </div>
+
+            <div class="page" id="page3" style="display:none;">
+    
+                <h1>Your Birthday Gift!</h1> <div class="container">
+                <div class="card">
+                    <div class="image image1"></div>
+                    <div class="info">
+                    <h2>HAPPY BIRTHDAY DEAR KAYAL</h2>
+                    <p>Happy Birthday to one of the most beautiful souls I know. 🌸✨ Your heart radiates kindness, your spirit uplifts everyone around you, and your love touches the deepest parts of those lucky enough to know you. On this special day, I hope you feel all the love you give to others, tenfold. May this year bring you as much peace, joy, and magic as you bring into the world. You deserve nothing less than all the beauty life has to offer. Keep shining your light—you make the world a better place just by being in it. 💖🎂🌟</p>
+                    </div>
+                </div>
+                </div>
+                
+                <button class="next-btn" onclick="nextPage(4)">Next</button>
+            </div>
+            
+
+            <div class="page" id="page4" style="display:none;">
+    
+                <div class="final-bg-image"></div>
+
+                <div class="page-content-overlay">
+                    <p>I hope you enjoyed the little journey. Wishing the beautiful soul the happiest birthday ever ❤️🥳</p>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    
+    <svg style="position: absolute; width: 0; height: 0;">
+      <filter id="wavy1">
+        <feturbulence x="0" y="0" baseFrequency="0.2" numOctaves="5" seed="1"></feturbulence>
+        <feDisplacementMap in="SourceGraphic" scale="20" />
+      </filter>
+    </svg>
+    <svg style="position: absolute; width: 0; height: 0;">
+      <filter id="wavy2">
+        <feturbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="1"></feturbulence>
+        <feDisplacementMap in="SourceGraphic" scale="20" />
+      </filter>
+    </svg>
+    <svg style="position: absolute; width: 0; height: 0;">
+      <filter id="wavy3">
+        <feturbulence x="0" y="0" baseFrequency="0.1" numOctaves="5" seed="1"></feturbulence>
+        <feDisplacementMap in="SourceGraphic" scale="20" />
+      </filter>
+    </svg>
+    <script src="script.js"></script>
+</body>
+</html>

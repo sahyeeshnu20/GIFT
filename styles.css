@@ -1,0 +1,360 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns content to the top */
+    min-height: 100vh;
+    text-align: right;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+
+    /* 🎂 RE-ADDING LIVE BACKGROUND STYLES 🎂 */
+    background: linear-gradient(-45deg, #000000, #002244, #0000FF, #FFFFFF);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite; 
+}
+
+/* Keyframes define the background animation sequence */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* --- Confetti Effect Styles --- */
+.confetti {
+    position: fixed;
+    top: -50%; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; 
+    pointer-events: none; 
+    transform: rotateZ(45deg); 
+}
+
+#confetti-layer-1 {
+    background-image: 
+        radial-gradient(red 10%, transparent 11%) 0% 0% / 50px 50px,
+        radial-gradient(blue 10%, transparent 11%) 10px 10px / 50px 50px,
+        radial-gradient(yellow 10%, transparent 11%) 20px 20px / 50px 50px,
+        radial-gradient(white 10%, transparent 11%) 30px 30px / 50px 50px;
+    background-size: 150px 150px;
+    animation: confetti-fall 8s linear infinite; 
+}
+
+#confetti-layer-2 {
+    background-image: 
+        radial-gradient(purple 10%, transparent 11%) 5% 5% / 70px 70px,
+        radial-gradient(orange 10%, transparent 11%) 15px 15px / 70px 70px;
+    background-size: 200px 200px;
+    opacity: 0.5;
+    animation: confetti-fall 12s linear infinite; 
+}
+
+/* Keyframes for the falling animation */
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotateZ(45deg);
+    }
+    100% {
+        transform: translateY(200vh) rotateZ(45deg); 
+    }
+}
+/* --- End Confetti Styles --- */
+
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size: clamp(2em, 5vw, 3em);
+    color: #ff7f50; 
+    margin-bottom: 20px;
+}
+
+/* --- Book Structure --- */
+.book-container {
+    max-width: 650px; 
+    width: 85%; 
+    height: 60vh; 
+    min-height: 350px; 
+    
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); 
+    background: white; 
+    
+    /* Custom Position: Down 10% and Left 10% */
+    margin-top: 10vh; 
+    transform: translateX(-10%); 
+}
+
+.book {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #dad7d7;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    
+    padding: 30px;
+    text-align: center; 
+    overflow-y: auto;
+}
+
+/* Fix for Next button clickability on Page 3 */
+#page3 .next-btn {
+    z-index: 10; /* Ensure the button stacks above all card elements */
+    position: flex; /* Must be relative or absolute for z-index to work */
+    margin-top: 90px; /* Add some space below the cards */
+}
+
+.page p {
+    text-align: center;
+}
+
+/* --- Form and Input Specific Styles for Page 2 --- */
+#question-container {
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto; 
+}
+
+#code-form {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+}
+
+#code-form input[type="text"] {
+    padding: 10px;
+    max-width: 300px; 
+    width: 80%;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+}
+
+#code-form button[type="submit"] {
+    padding: 10px 20px;
+    background: #ff7f50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+/* --- Button Styles --- */
+.next-btn {
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: #ff7f50;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.next-btn:hover {
+    background: #e6653d; 
+}
+
+
+/* ======================================= */
+/* --- NEW WAVY CARD EFFECT STYLES (PAGE 3) --- */
+/* ======================================= */
+
+.page .container { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%; 
+  max-width: 90%;
+  margin-top: 10px; /* Added spacing */
+}
+
+.page .container .card {
+  position: relative;
+  width: 350px; /* NEW SIZE: Make the visible frame wider */
+  height: 450px; /* NEW SIZE: Make the visible frame taller */
+  margin: 15px; 
+}
+
+.page .container .card:nth-of-type(2) {
+  transform: rotate(3deg); 
+}
+
+.page .container .card .image {
+  position: relative;
+  /* Image size remains 100% of the *new, larger* container */
+  width: 100%;
+  height: 100%;
+  
+  background-size: cover;
+  background-position: center; 
+  
+  transform: translate(10px, 10px);
+  
+  border-radius: 5px;
+}
+
+/* Wavy Border Pseudo-element */
+.page .container .card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Adjust width and height based on the new card size (350x450) - 5px offset */
+  width: 345px; /* 400 - 5 = 345px */
+  height: 445px; /* 450 - 5 = 445px */
+  border: 10px solid #04316b; 
+  z-index: 1;
+  background: transparent;
+  box-shadow: 3px 3px 10px rgba(212, 2, 2, 0.2); 
+  
+  filter: url(#wavy1); 
+}
+
+/* Applying the SVG Filter to the borders (requires SVG code in HTML) */
+.page .container .card:nth-of-type(1)::before {
+  filter: url(#wavy1);
+}
+
+/* Image Source Backgrounds (Use your own image links here!) */
+.image1 {
+  background-image: url('images/kayal2.jpg');
+}
+
+
+/* Info Overlay (Text on Hover) */
+.page .container .card .info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  padding: 20px; 
+  transform: translate(10px, 10px);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.75); 
+  border-radius: 5px;
+  color: #fff;
+  line-height: 1.2;
+  font-size: 1em;
+  opacity: 0;
+  transition-duration: 0.5s; 
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page .container .card .info h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.page .container .card:hover .info {
+  opacity: 1;
+}
+
+/* SVG Hiding */
+svg {
+  width: 0;
+  height: 0;
+}
+
+/* ======================================= */
+/* --- NEW PAGE 4 FADE/ZOOM EFFECT --- */
+/* ======================================= */
+
+/* 1. Page 4 Container Styles */
+#page4 {
+    /* Ensure the page is black to hide the background animation while the image fades in */
+    background: black; 
+    /* Remove padding/centering rules to let the image fill the space */
+    padding: 0; 
+    justify-content: center; 
+    align-items: center;
+}
+
+/* 2. Image Placeholder and Animation */
+.final-bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    
+    /* Use the second image from your previous code */
+    background-image: url('images/kayal.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    /* Animation: Zoom in and fade in */
+    animation: zoom-fade-in 4s ease-out forwards;
+}
+
+@keyframes zoom-fade-in {
+    0% { 
+        opacity: 0; 
+        transform: scale(1.1); /* Starts zoomed in slightly */
+    }
+    100% { 
+        opacity: 1; 
+        transform: scale(1); /* Zooms out to fill space */
+    }
+}
+
+/* 3. Text Overlay (Make sure the text is bright and visible) */
+.page .page-content-overlay {
+    position: relative;
+    z-index: 2; 
+    text-align: center;
+    color: white; 
+    text-shadow: 0 0 10px black; /* Stronger shadow for contrast */
+    padding: 30px; 
+    width: 100%; 
+    box-sizing: border-box; 
+    
+    /* Fade the text in slightly after the image animation starts */
+    animation: text-fade-in 2s ease-out 1s forwards;
+    opacity: 0; /* Starts hidden */
+}
+
+@keyframes text-fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
