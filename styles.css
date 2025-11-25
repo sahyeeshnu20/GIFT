@@ -250,7 +250,7 @@ h1 {
 }
 
 /* Image Source Backgrounds (Use your own image links here!) */
-.image1 {
+.kayal-image1 {
   background-image: url('https://github.com/sahyeeshnu20/GIFT/blob/main/kayal2.jpg');
 }
 
@@ -319,7 +319,7 @@ svg {
     z-index: 0;
     
     /* Use the second image from your previous code */
-    background-image: url('https://raw.githubusercontent.com/sahyeeshnu20/GIFT/main/kayal.jpg');
+    background-image: url('https://github.com/sahyeeshnu20/GIFT/blob/main/kayal.jpg');
     background-size: cover;
     background-position: center;
     
